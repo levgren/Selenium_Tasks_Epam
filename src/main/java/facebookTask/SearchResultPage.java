@@ -1,9 +1,9 @@
 package facebookTask;
 
-import facebookTask.utils.ConfigProperties;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
+        import facebookTask.utils.ConfigProperties;
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.StaleElementReferenceException;
+        import org.openqa.selenium.WebElement;
 
 public class SearchResultPage extends AbstractPage{
     //Click link "Facebook - Log In or Sign Up"
@@ -21,6 +21,6 @@ public class SearchResultPage extends AbstractPage{
             System.out.println("Selection failed! Try again...");
         }
         System.out.println("Link is found!");
-                return new FacebookPage();
-        }
+        return new FacebookPage();
     }
+}
