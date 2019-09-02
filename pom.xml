@@ -64,8 +64,7 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <threadCountMethods>4</threadCountMethods>
-                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${asp</argLine>
-                    <argLine>ectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
