@@ -1,8 +1,8 @@
 package facebookTask;
 
         import facebookTask.utils.ConfigProperties;
+        import io.qameta.allure.Allure;
         import org.openqa.selenium.By;
-        import org.openqa.selenium.StaleElementReferenceException;
         import org.openqa.selenium.WebElement;
 
 public class SearchResultPage extends AbstractPage{
@@ -12,15 +12,15 @@ public class SearchResultPage extends AbstractPage{
     private String searchedLink = ConfigProperties.getTestProperty("searchedLink");
 
     public FacebookPage lookingForLink() {
-        try {
-            for (WebElement link : driver.findElements(allLinksSelector))
-                if (link.getText().equalsIgnoreCase(searchedLink))
+            for (WebElement link : driver.findElements(allLinksSelector)){
+                if (link.getText().equalsIgnoreCase(searchedLink)) {
                     link.click();
+                    Allure.addAttachment("Click on necessary link", "link: " + searchedLink + " was found and being klicked");
+//                    System.out.println("the searched link was found");  //todo loging
+                    break;
+                }
         }
-        catch (StaleElementReferenceException e){
-            System.out.println("Selection failed! Try again...");
-        }
-        System.out.println("Link is found!");
         return new FacebookPage();
     }
+
 }

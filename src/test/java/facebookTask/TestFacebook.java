@@ -1,24 +1,17 @@
 package facebookTask;
 
-import org.junit.After;
 import org.junit.Test;
 
-public class TestFacebook {
-    private SearchPage basePage = new SearchPage();
+public class TestFacebook extends BaseTest{
 
     @Test
     public void testCase(){
-        basePage.goTo()
-                .searchWord()
+        basePage.searchWord()
                 .lookingForLink()
                 .checkUrl()
                 .enterData()
-                .verifyTeMessage();
+                .verifyTheMessage();
     }
 
-    @After
-    public void closeDriver(){
-        new AbstractPage().closeDriver();
-    }
 
 }
